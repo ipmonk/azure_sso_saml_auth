@@ -88,7 +88,6 @@ class AzureSsoSamlAuth:
                 f"unable to obtain tenent guid from url in response\n{trace}"
             )
 
-        self.externalidpstatehash = response.cookies["ExternalIdpStateHash"]
         self.buid = response.cookies["buid"]
         self.fpc = response.cookies["fpc"]
         self.stsservicecookie = response.cookies["stsservicecookie"]
@@ -130,7 +129,6 @@ class AzureSsoSamlAuth:
 
         cookies_out = {
             "buid": self.buid,
-            "ExternalIdpStateHash": self.externalidpstatehash,
             "fpc": self.fpc,
             "esctx": self.esctx,
             "x_ms_gateway_slice": self.x_ms_gateway_slice,
@@ -192,7 +190,6 @@ class AzureSsoSamlAuth:
 
         cookies_out = {
             "buid": self.buid,
-            "ExternalIdpStateHash": self.externalidpstatehash,
             "fpc": self.fpc,
             "esctx": self.esctx,
             "x_ms_gateway_slice": self.x_ms_gateway_slice,
